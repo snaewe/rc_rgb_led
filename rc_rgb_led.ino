@@ -13,18 +13,18 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(4, 2, NEO_GRB + NEO_KHZ800);
 
 // Helligkeit einstellen. Kann von 0 bis Maximal 255 festgelegt werden.
 // Bei Maximaler Ausleuchtung ist zu prüfen, ob die Maximale Stromabnahme erreicht wird.
-int brightness = 100;
+const int brightness = 100;
 
 // Helligkeit bei verwendung der WS2812b, wenn sie weis auf blitzen sollen.
 // Bei 210 wird die Maximale Stromabnahme überschritten.
 // Darf nur kurz verwendet werden, ansonsten brennt der Spannungsregler durch.
-int brightnessWhite = 210;
+const int brightnessWhite = 210;
 
 // Wird zum festlegen des Licht Einstellung verwendet.
 // Damit die Einstellung funktioniert,
 // muss an der Fernsteuerung einmal hin und her Geschaltet oder gedreht werden,
 // um die längste Pulslänge zu ermitteln.
-unsigned long maxPwmIn = 2;
+static unsigned long maxPwmIn = 2;
 
 void setup() {
   // Signal von der Fernsteuerung aufnehmen.
